@@ -1,9 +1,21 @@
 const mongoose = require('mongoose');
+const http = require('http');
+const { Server } = require('socket.io');
+
+const app = require('./index');
+let server = http.createServer(app);
+const io = new Server(server);
 
 const dotenv = require('dotenv');
 dotenv.config({ path: './config.env'});
 
-const app = require('./index');
+
+io.on('connection', (socket) => {
+    console.log('a user connected');
+});
+  
+
+
 const User = require('./models/userModel');
 
 process.on('uncaughtException', err => {
@@ -30,7 +42,7 @@ const DB = process.env.DATABASE.replace(
 
 
 const port  = process.env.PORT || 5000;
-const server = app.listen(port, ()=>{
+server = app.listen(port, ()=>{
     console.log(`Server is running`);
 })
 
