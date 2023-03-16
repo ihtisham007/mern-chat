@@ -13,3 +13,11 @@
 ### Step 3
 
 `docker-compose up `
+
+### front-end
+
+`http://localhost:3000`
+
+### back-end
+
+`http://localhost:5000`
