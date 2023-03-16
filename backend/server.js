@@ -17,7 +17,7 @@ const DB = process.env.DATABASE.replace(
     process.env.DATABASE_PASSWORD
 );
 
-mongoose.connect(process.env.DATABASE_LOCAL, {useNewUrlParser: true, useUnifiedTopology: true})
+//mongoose.connect(process.env.DATABASE_LOCAL, {useNewUrlParser: true, useUnifiedTopology: true})
 
 
 // mongoose.connect(process.env.DATABASE_LOCAL, {
@@ -29,7 +29,7 @@ mongoose.connect(process.env.DATABASE_LOCAL, {useNewUrlParser: true, useUnifiedT
 
 
 
-const port  = process.env.PORT || 3000;
+const port  = process.env.PORT || 5000;
 const server = app.listen(port, ()=>{
     console.log(`Server is running`);
 })

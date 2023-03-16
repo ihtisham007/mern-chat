@@ -8,7 +8,7 @@ route.post('/login', authController.login);
 
 route
     .route('/')
-    .get(authController.protect,apiController.getUser)
+    .get(apiController.getUser)
     .post(apiController.checkUser,apiController.saveUser);
 
 route

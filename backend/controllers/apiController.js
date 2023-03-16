@@ -5,15 +5,18 @@ const AppError = require('./../utils/appError');
 
 const getUser =  catchAsync(async (req, res, next) => {   
 
-    const features = new APIFeatures(User.find(), req.query)
-        .filter()
-        .sort()
-        .limitFields()
-        .paginate();
-    const users = await features.query;
-    res.status(200).json({
-        status: 'success',
-        data: users
+    // const features = new APIFeatures(User.find(), req.query)
+    //     .filter()
+    //     .sort()
+    //     .limitFields()
+    //     .paginate();
+    // const users = await features.query;
+    // res.status(200).json({
+    //     status: 'success',
+    //     data: users
+    // });
+     res.status(200).json({
+        status: 'Server is running',
     });
 })
 
