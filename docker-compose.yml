@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/app
+    networks:
+      - websockts
+  
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/api
+    networks:
+      - websockts
+
+networks:
+  websockts:

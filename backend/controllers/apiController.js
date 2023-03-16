@@ -16,7 +16,7 @@ const getUser =  catchAsync(async (req, res, next) => {
     //     data: users
     // });
      res.status(200).json({
-        status: 'Server is running',
+        status: 'Server is running asd',
     });
 })
 
